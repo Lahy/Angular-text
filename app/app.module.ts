@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { StoryComponent } from './story/story.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PersonComponent } from './person/person.component';
+import { StoryService } from './story.service';
 
 
 @NgModule({
@@ -21,7 +22,9 @@ import { PersonComponent } from './person/person.component';
     AppRoutingModule,
     FormsModule // 调用双向绑定
   ],
-  providers: [],
+  providers: [
+    StoryService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
