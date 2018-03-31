@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { story }  from '../story';
 
-import { STORY } from '../mock-story';
+//import { STORY } from '../mock-story';
+import { StoryService } from '../story.service';
 
 @Component({
   selector: 'app-story',
@@ -15,11 +16,17 @@ export class StoryComponent implements OnInit {
   //   id: 1,
   //   name: 'Lost Love',
   // };
-  story = STORY;
+  //story = STORY;
+  story:story[];
 
-  constructor() { }
+  constructor(private StoryService: StoryService) { }
+
+  getStory(): void{
+    this.story = this.StoryService.getStory();
+  }
 
   ngOnInit() {
+    this.getStory();
   }
 
 }
